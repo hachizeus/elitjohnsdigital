@@ -9,68 +9,75 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 200 100% 13%;
+    --foreground: 160 80% 10%;
     
-    /* Elitjohns Brand Colors */
-    --primary: 145 77% 57%; /* Green #45E46F */
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 145 77% 67%;
+    /* Elitjohns Brand Colors - Updated to match reference */
+    --primary: 75 100% 60%; /* Lime/Yellow Green #C4FF61 */
+    --primary-foreground: 160 80% 10%;
+    --primary-glow: 75 100% 70%;
     
-    --secondary: 205 91% 15%; /* Dark Blue #072744 */
+    --secondary: 170 100% 12%; /* Dark Teal #003D3D */
     --secondary-foreground: 0 0% 100%;
     
-    --accent: 145 77% 57%;
-    --accent-foreground: 205 91% 15%;
+    --accent: 75 100% 60%;
+    --accent-foreground: 160 80% 10%;
     
     --muted: 0 0% 96%;
-    --muted-foreground: 200 10% 45%;
+    --muted-foreground: 160 20% 45%;
     
     --card: 0 0% 100%;
-    --card-foreground: 200 100% 13%;
+    --card-foreground: 160 80% 10%;
+    
+    --card-dark: 170 100% 12%;
+    --card-dark-foreground: 0 0% 100%;
+    
+    --card-accent: 75 100% 60%;
+    --card-accent-foreground: 160 80% 10%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 200 100% 13%;
+    --popover-foreground: 160 80% 10%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 200 20% 90%;
-    --input: 200 20% 90%;
-    --ring: 145 77% 57%;
+    --border: 160 20% 90%;
+    --input: 160 20% 90%;
+    --ring: 75 100% 60%;
     
-    --radius: 0.75rem;
+    --radius: 1rem;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(205 91% 15%), hsl(145 77% 57%));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(170 100% 12%), hsl(170 80% 20%));
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --gradient-card: linear-gradient(135deg, hsl(170 100% 12%), hsl(170 80% 18%));
     
     /* Shadows */
-    --shadow-card: 0 4px 20px -2px hsl(200 20% 50% / 0.08);
-    --shadow-hover: 0 8px 30px -4px hsl(145 77% 57% / 0.2);
-    --shadow-button: 0 4px 14px 0 hsl(145 77% 57% / 0.3);
+    --shadow-card: 0 8px 30px -6px hsl(160 40% 20% / 0.15);
+    --shadow-hover: 0 12px 40px -8px hsl(160 40% 20% / 0.25);
+    --shadow-button: 0 4px 14px 0 hsl(75 100% 60% / 0.35);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 205 91% 15%;
+    --background: 170 100% 12%;
     --foreground: 0 0% 98%;
     
-    --primary: 145 77% 57%;
-    --primary-foreground: 205 91% 15%;
+    --primary: 75 100% 60%;
+    --primary-foreground: 160 80% 10%;
     
-    --secondary: 200 20% 20%;
+    --secondary: 160 20% 20%;
     --secondary-foreground: 0 0% 98%;
     
-    --muted: 200 20% 20%;
-    --muted-foreground: 200 10% 65%;
+    --muted: 160 20% 20%;
+    --muted-foreground: 160 10% 65%;
     
-    --card: 200 30% 12%;
+    --card: 170 80% 15%;
     --card-foreground: 0 0% 98%;
     
-    --border: 200 20% 25%;
-    --input: 200 20% 25%;
+    --border: 160 20% 25%;
+    --input: 160 20% 25%;
   }
 }
 

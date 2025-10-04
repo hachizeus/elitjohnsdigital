@@ -92,16 +92,16 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-secondary mb-6">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
               About Elitjohns Digital
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Founded by <span className="font-semibold text-foreground">Victor Gathecha</span>, Elitjohns Digital Agency is dedicated to empowering businesses across Kenya with cutting-edge digital solutions. We combine creativity, technical expertise, and strategic thinking to deliver results that matter.
+            <p className="text-lg text-secondary-foreground/90 mb-8 leading-relaxed">
+              Founded by <span className="font-semibold text-primary">Victor Gathecha</span>, Elitjohns Digital Agency is dedicated to empowering businesses across Kenya with cutting-edge digital solutions. We combine creativity, technical expertise, and strategic thinking to deliver results that matter.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-secondary-foreground/90 leading-relaxed">
               Our mission is to make professional digital services accessible to businesses of all sizes, helping them compete and thrive in the digital age.
             </p>
           </div>
@@ -109,7 +109,7 @@ const Index = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 gradient-section">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-secondary mb-4">
@@ -124,15 +124,23 @@ const Index = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-card p-8 rounded-lg shadow-card hover:shadow-hover transition-all duration-300 animate-fade-in-up"
+                className={`p-8 rounded-2xl shadow-card hover:shadow-hover transition-all duration-300 animate-fade-in-up ${
+                  index % 3 === 0 ? 'bg-primary text-primary-foreground' : 
+                  index % 3 === 1 ? 'bg-card' : 
+                  'bg-secondary text-secondary-foreground'
+                }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <service.icon className="w-12 h-12 text-primary mb-4" />
+                <service.icon className={`w-12 h-12 mb-4 ${index % 3 === 0 || index % 3 === 2 ? '' : 'text-primary'}`} />
                 <h3 className="text-2xl font-heading font-semibold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <p className={`mb-4 ${index % 3 === 0 ? 'text-primary-foreground/90' : index % 3 === 2 ? 'text-secondary-foreground/90' : 'text-muted-foreground'}`}>
+                  {service.description}
+                </p>
                 <Link
                   to="/services"
-                  className="text-primary font-medium inline-flex items-center hover:gap-2 transition-all"
+                  className={`font-medium inline-flex items-center hover:gap-2 transition-all ${
+                    index % 3 === 0 || index % 3 === 2 ? 'text-white' : 'text-primary'
+                  }`}
                 >
                   Learn More <ArrowRight size={16} className="ml-1" />
                 </Link>
@@ -149,13 +157,13 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-secondary mb-4">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-secondary-foreground/90">
               Real results from real businesses
             </p>
           </div>
@@ -164,7 +172,7 @@ const Index = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-card p-8 rounded-lg shadow-card animate-fade-in-up"
+                className="bg-card p-8 rounded-2xl shadow-card animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <p className="text-muted-foreground italic mb-6">"{testimonial.quote}"</p>

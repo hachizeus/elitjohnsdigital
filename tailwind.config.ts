@@ -51,6 +51,10 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          dark: "hsl(var(--card-dark))",
+          "dark-foreground": "hsl(var(--card-dark-foreground))",
+          accent: "hsl(var(--card-accent))",
+          "accent-foreground": "hsl(var(--card-accent-foreground))",
         },
       },
       borderRadius: {
