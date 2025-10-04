@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import logo from "@/assets/elitjohns-logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <span className="text-xl font-heading font-bold text-primary">Elitjohns</span>
-              <span className="text-xl font-heading font-bold">Digital</span>
+            <div className="flex items-center space-x-3">
+              <img src={logo} alt="Elitjohns Digital" className="h-10 w-10" />
+              <div className="flex items-center space-x-2">
+                <span className="text-xl font-heading font-bold text-primary">Elitjohns</span>
+                <span className="text-xl font-heading font-bold">Digital</span>
+              </div>
             </div>
             <p className="text-sm text-secondary-foreground/70">
               Transforming businesses through innovative digital solutions
