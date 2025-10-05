@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
@@ -31,16 +30,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
-  const location = useLocation();
   useSmoothScroll();
-
-  // Prevent unwanted redirects to /website
-  useEffect(() => {
-    if (location.pathname === '/website') {
-      navigate('/', { replace: true });
-    }
-  }, [location.pathname, navigate]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
