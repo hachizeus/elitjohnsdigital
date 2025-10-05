@@ -81,7 +81,7 @@ const App = () => {
               <ChatWidget />
               <PricingCalculator />
               <ScrollToTopButton />
-            </BrowserRouter>
+            </HashRouter>
           </TooltipProvider>
         </QueryClientProvider>
     </ErrorBoundary>
