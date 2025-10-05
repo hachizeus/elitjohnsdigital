@@ -3,7 +3,7 @@ import { ArrowRight, Code, Smartphone, Palette, TrendingUp, Search, Bot, CheckCi
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import FloatingActionButton from "@/components/FloatingActionButton";
+
 import ChatWidget from "@/components/ChatWidget";
 import PricingCalculator from "@/components/PricingCalculator";
 
@@ -430,7 +430,7 @@ const Index = () => {
 
       <ParticleBackground />
       <ProgressBar />
-      <FloatingActionButton />
+
       <ChatWidget />
     </div>
   );

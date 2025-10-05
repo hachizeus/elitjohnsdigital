@@ -73,7 +73,7 @@ const App = () => {
             <Route path="/portfolio/:category" element={<PortfolioCategory />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/admin" element={<TestAdmin />} />
+            <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin-full" element={<AdminDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

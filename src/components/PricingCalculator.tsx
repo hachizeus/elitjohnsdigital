@@ -51,7 +51,7 @@ const PricingCalculator = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-40 right-8 z-40 w-14 h-14 bg-white text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center"
+        className="fixed bottom-24 right-8 z-40 w-14 h-14 bg-white text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center"
         title="Pricing Calculator"
       >
         <Calculator className="w-6 h-6" />
