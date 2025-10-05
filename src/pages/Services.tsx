@@ -31,7 +31,7 @@ const Services = () => {
             {/* Make the tabs horizontally scrollable on small screens, stretch to viewport edges (-mx-4)
                 and enable scroll snapping so each tab snaps into view. Reduce min widths on xs.
             */}
-            <TabsList className="flex gap-1 sm:gap-3 mb-12 sm:mb-16 bg-white p-3 sm:p-4 rounded-lg shadow-card overflow-x-auto whitespace-nowrap -mx-4 sm:mx-0 px-6 snap-x snap-mandatory scrollbar-thin">
+            <TabsList className="flex gap-1 sm:gap-3 mb-12 sm:mb-16 bg-white p-3 sm:p-4 rounded-lg shadow-card overflow-x-auto whitespace-nowrap mx-auto justify-center max-w-full snap-x snap-mandatory scrollbar-thin">
                   <TabsTrigger value="website" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[13px] sm:text-sm px-2 sm:px-4 py-2 rounded-md min-w-[44px] sm:min-w-[72px] text-center flex-shrink-0 snap-start">Websites</TabsTrigger>
                   <TabsTrigger value="apps" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[13px] sm:text-sm px-2 sm:px-4 py-2 rounded-md min-w-[44px] sm:min-w-[64px] text-center flex-shrink-0 snap-start">Apps</TabsTrigger>
                   <TabsTrigger value="branding" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[13px] sm:text-sm px-2 sm:px-4 py-2 rounded-md min-w-[44px] sm:min-w-[72px] text-center flex-shrink-0 snap-start">Branding</TabsTrigger>
