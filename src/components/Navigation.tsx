@@ -50,7 +50,7 @@ const Navigation = () => {
           <div className="flex items-center space-x-2 sm:space-x-6">
             <div className="hidden sm:flex items-center space-x-2">
               <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span className="hidden md:inline">+254 712 345 678</span>
+              <span className="hidden md:inline">+254 759 001 048</span>
               <span className="md:hidden">Call Us</span>
             </div>
             <div className="flex items-center space-x-1 sm:space-x-2">

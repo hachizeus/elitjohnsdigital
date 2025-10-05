@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Code, Smartphone, Palette, TrendingUp, Search, Bot, CheckCircle, Users, Award, Target, Star, Zap, Shield } from "lucide-react";
+import { ArrowRight, Code, Smartphone, Palette, TrendingUp, Search, Bot, CheckCircle, Users, Award, Target, Zap, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -76,25 +76,21 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden max-w-full">
 
       <Navigation />
 
       {/* Hero Section - Premium Layout */}
-      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden" style={{
+      <section className="pt-32 sm:pt-36 md:pt-40 lg:pt-48 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden" style={{
         backgroundImage: `url(${groupImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
         <div className="absolute inset-0 bg-black/60"></div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div className="space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in-left text-center lg:text-left">
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 rounded-full text-sm font-semibold border border-green-200 animate-bounce-in">
-                <Star className="w-4 h-4 mr-2 text-yellow-500" />
-                Kenya's #1 Rated Digital Agency
-              </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-full">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center max-w-full">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in-left text-center lg:text-left max-w-full">
               
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
                 Transform Your Business
@@ -136,12 +132,14 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="relative animate-fade-in-right mt-8 lg:mt-0">
-              <div className="relative">
+            <div className="relative animate-fade-in-right mt-8 lg:mt-0 max-w-full">
+              <div className="relative max-w-full">
                 <img
                   src={heroImage}
                   alt="Digital transformation"
-                  className="rounded-2xl shadow-2xl w-full hover:scale-105 transition-transform duration-700"
+                  className="rounded-2xl shadow-2xl w-full max-w-full hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
               </div>
@@ -162,9 +160,9 @@ const Index = () => {
               <div className="absolute -top-4 sm:-top-8 -right-4 sm:-right-8 bg-white p-2 sm:p-4 rounded-2xl shadow-2xl animate-bounce-in" style={{animationDelay: '1s'}}>
                 <div className="flex items-center space-x-1 sm:space-x-2">
                   <div className="flex -space-x-1 sm:-space-x-2">
-                    <img src={handsome1} alt="Client" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" />
-                    <img src={woman} alt="Client" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" />
-                    <img src={handsome2} alt="Client" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" />
+                    <img src={handsome1} alt="Client" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" loading="lazy" decoding="async" />
+                    <img src={woman} alt="Client" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" loading="lazy" decoding="async" />
+                    <img src={handsome2} alt="Client" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" loading="lazy" decoding="async" />
                   </div>
                   <div className="text-xs sm:text-sm font-semibold text-gray-900">50+ Happy Clients</div>
                 </div>
@@ -175,10 +173,10 @@ const Index = () => {
       </section>
 
       {/* Premium Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-green-600 to-emerald-600 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-primary via-green-600 to-emerald-600 relative overflow-hidden max-w-full">
         <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container mx-auto container-padding relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="container mx-auto container-padding relative z-10 max-w-full">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-full">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group animate-scale-in" style={{animationDelay: `${index * 200}ms`}}>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:scale-110">
@@ -194,13 +192,13 @@ const Index = () => {
       </section>
 
       {/* Premium About Section */}
-      <section className="section-padding bg-gradient-to-br from-white via-gray-50 to-green-50/30 relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-br from-white via-gray-50 to-green-50/30 relative overflow-hidden max-w-full">
         {/* Background decoration */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-green-200/10 rounded-full blur-3xl animate-float"></div>
         
-        <div className="container mx-auto container-padding relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="container mx-auto container-padding relative z-10 max-w-full">
+          <div className="grid lg:grid-cols-2 gap-20 items-center max-w-full">
             <div className="space-y-8 animate-fade-in-left">
               <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary/10 to-green-100 text-primary rounded-full text-sm font-semibold border border-primary/20">
                 <Award className="w-4 h-4 mr-2" />
@@ -270,9 +268,9 @@ const Index = () => {
       </section>
 
       {/* Premium Services Overview */}
-      <section className="section-padding bg-gradient-to-b from-gray-50 to-white relative">
-        <div className="container mx-auto container-padding">
-          <div className="text-center mb-20 animate-fade-in-up">
+      <section className="section-padding bg-gradient-to-b from-gray-50 to-white relative max-w-full overflow-hidden">
+        <div className="container mx-auto container-padding max-w-full">
+          <div className="text-center mb-20 animate-fade-in-up max-w-full">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary/10 to-green-100 text-primary rounded-full text-sm font-semibold mb-6 animate-bounce-in">
               <Zap className="w-4 h-4 mr-2" />
               Premium Digital Solutions
@@ -285,7 +283,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-full">
             {services.map((service, index) => {
               const isHighlighted = index === 1 || index === 4;
               return (
@@ -351,9 +349,9 @@ const Index = () => {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto container-padding">
-          <div className="text-center mb-16">
+      <section className="section-padding bg-white max-w-full overflow-hidden">
+        <div className="container mx-auto container-padding max-w-full">
+          <div className="text-center mb-16 max-w-full">
             <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium mb-4">
               Our Process
             </div>
@@ -365,7 +363,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-full">
             {[
               {
                 step: "01",
@@ -402,13 +400,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding relative overflow-hidden" style={{
+      <section className="section-padding relative overflow-hidden max-w-full" style={{
         backgroundImage: `url(${groupImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
         <div className="absolute inset-0 bg-gray-900/70"></div>
-        <div className="container mx-auto container-padding text-center relative z-10">
+        <div className="container mx-auto container-padding text-center relative z-10 max-w-full">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Start Your Digital Journey with Elitjohns Today!
@@ -416,7 +414,7 @@ const Index = () => {
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               Ready to transform your business digitally? Let's discuss how we can help you achieve your goals with our comprehensive digital solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-full">
               <Link to="/contact" className="bg-white text-primary hover:bg-gray-100 font-medium px-8 py-4 rounded-lg transition-smooth inline-flex items-center justify-center">
                 Get Started Today <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
@@ -432,6 +430,8 @@ const Index = () => {
 
       <ParticleBackground />
       <ProgressBar />
+      <FloatingActionButton />
+      <ChatWidget />
     </div>
   );
 };

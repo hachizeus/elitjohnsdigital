@@ -30,32 +30,32 @@ const FloatingActionButton = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50">
       {/* Expanded Menu */}
       {isExpanded && (
-        <div className="absolute bottom-20 right-0 space-y-3 animate-fade-in-up">
+        <div className="absolute bottom-20 right-0 space-y-4 animate-fade-in-up">
           <Link
             to="/contact"
-            className="flex items-center justify-center w-14 h-14 bg-white text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+            className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
             title="Contact Us"
           >
-            <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
           </Link>
           
           <a
-            href="tel:+254700000000"
-            className="flex items-center justify-center w-14 h-14 bg-white text-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+            href="tel:+254759001048"
+            className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white text-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
             title="Call Us"
           >
-            <Phone className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <Phone className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
           </a>
           
           <button
             onClick={scrollToTop}
-            className="flex items-center justify-center w-14 h-14 bg-white text-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+            className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white text-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
             title="Back to Top"
           >
-            <ArrowUp className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
           </button>
         </div>
       )}
@@ -63,16 +63,16 @@ const FloatingActionButton = () => {
       {/* Main FAB */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className={`w-16 h-16 bg-gradient-to-r from-primary to-green-600 text-white rounded-full shadow-2xl hover:shadow-primary/25 transition-all duration-300 hover:scale-110 animate-glow ${
+        className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-primary to-green-600 text-white rounded-full shadow-2xl hover:shadow-primary/25 transition-all duration-300 hover:scale-110 animate-glow ${
           isExpanded ? 'rotate-45' : ''
         }`}
         title="Quick Actions"
       >
         <div className="flex items-center justify-center">
           {isExpanded ? (
-            <div className="w-6 h-0.5 bg-white"></div>
+            <div className="w-5 h-0.5 sm:w-6 sm:h-0.5 bg-white"></div>
           ) : (
-            <MessageCircle className="w-7 h-7" />
+            <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7" />
           )}
         </div>
       </button>

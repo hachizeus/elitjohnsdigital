@@ -32,15 +32,27 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent Successfully!",
-        description: "We'll get back to you within 24 hours.",
-      });
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+    // Create WhatsApp message
+    const message = `New Contact Form Submission:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Service: ${formData.service}
+Message: ${formData.message}`;
+    
+    const whatsappUrl = `https://wa.me/254759001048?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    toast({
+      title: "Redirecting to WhatsApp!",
+      description: "Your message has been prepared for WhatsApp.",
+    });
+    
+    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    setIsSubmitting(false);
   };
 
   const handleChange = (field: string, value: string) => {
@@ -48,12 +60,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navigation />
 
       {/* Header */}
       <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-12 sm:pb-16 bg-gradient-to-r from-primary via-green-600 to-emerald-600">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             Get in Touch
           </h1>
@@ -65,7 +77,7 @@ const Contact = () => {
 
       {/* Contact Content */}
       <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
             <div className="bg-gray-50 p-6 sm:p-8 rounded-lg shadow-lg">
@@ -106,7 +118,7 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleChange("phone", e.target.value)}
-                    placeholder="+254 712 345 678"
+                    placeholder="+254 759 001 048"
                     className="mt-2"
                   />
                 </div>
@@ -179,13 +191,18 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold text-lg mb-1">Phone</h3>
-                    <p className="text-muted-foreground">Available on request</p>
+                    <h3 className="font-semibold text-base sm:text-lg mb-1">Phone</h3>
+                    <a
+                      href="tel:+254759001048"
+                      className="text-gray-600 hover:text-primary transition-colors text-sm sm:text-base"
+                    >
+                      +254 759 001 048
+                    </a>
                   </div>
                 </div>
 

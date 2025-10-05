@@ -22,18 +22,13 @@ export const useProjects = (category?: string) => {
           title,
           description,
           category,
-          client_name,
           project_url,
-          technologies,
-          features,
           is_featured,
-          status,
-          created_at,
-          images:project_images(image_url, is_primary, display_order)
+          images:project_images!inner(image_url, is_primary)
         `)
         .eq('status', 'published')
         .order('created_at', { ascending: false })
-        .limit(20)
+        .limit(12)
 
       if (category) {
         query = query.eq('category', category)
