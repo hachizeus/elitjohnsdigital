@@ -12,6 +12,7 @@ import PortfolioCategory from "./pages/PortfolioCategory";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/AdminDashboard";
+import TestAdmin from "./pages/TestAdmin";
 import NotFound from "./pages/NotFound";
 import LoadingScreen from "./components/LoadingScreen";
 
@@ -72,7 +73,8 @@ const App = () => {
             <Route path="/portfolio/:category" element={<PortfolioCategory />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin" element={<TestAdmin />} />
+            <Route path="/admin-full" element={<AdminDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
               </Routes>
