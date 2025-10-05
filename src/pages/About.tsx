@@ -32,33 +32,33 @@ const About = () => {
       <Navigation />
 
       {/* Header */}
-      <section className="pt-32 pb-16 gradient-hero">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6">
+      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-12 sm:pb-16 bg-gradient-to-r from-primary via-green-600 to-emerald-600">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             About Elitjohns Digital
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto px-4">
             Empowering businesses through innovative digital solutions
           </p>
         </div>
       </section>
 
       {/* Founder Story */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 lg:order-1">
-              <h2 className="text-4xl font-heading font-bold text-secondary mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Our Founder
               </h2>
-              <h3 className="text-2xl font-semibold text-primary mb-4">Victor Gathecha</h3>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-semibold text-primary mb-3 sm:mb-4">Victor Gathecha</h3>
+              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 With a passion for technology and a vision to democratize digital services, Victor founded Elitjohns Digital Agency to bridge the gap between businesses and the digital world.
               </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Understanding the challenges that businesses face in establishing their online presence, Victor created a comprehensive suite of services that are not only affordable but also deliver exceptional results.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 Today, Elitjohns Digital Agency serves clients across Kenya, helping them transform their digital presence and achieve their business goals through strategic digital solutions.
               </p>
             </div>
@@ -74,18 +74,18 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="bg-card p-8 rounded-lg shadow-card">
-              <h2 className="text-3xl font-heading font-bold text-secondary mb-4">Our Mission</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
+            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Our Mission</h2>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 To empower businesses of all sizes with professional, affordable digital solutions that drive growth, enhance visibility, and create lasting impact in the digital landscape.
               </p>
             </div>
-            <div className="bg-card p-8 rounded-lg shadow-card">
-              <h2 className="text-3xl font-heading font-bold text-secondary mb-4">Our Vision</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Our Vision</h2>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 To become Kenya's most trusted digital agency, known for transforming businesses through innovation, creativity, and unwavering commitment to client success.
               </p>
             </div>

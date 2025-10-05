@@ -1,73 +1,69 @@
-# Welcome to your Lovable project
+# Elitjohns Digital Agency Website
 
-## Project info
+A premium digital agency website showcasing our comprehensive services including web development, app development, branding, social media marketing, and AI solutions.
 
-**URL**: https://lovable.dev/projects/1a9f5a3c-15a6-4852-b4d8-a75fcce84d4b
+## About Elitjohns Digital
 
-## How can I edit this code?
+Elitjohns Digital is a leading digital agency transforming businesses across Kenya through innovative digital solutions and professional services. We specialize in creating premium, results-driven digital experiences.
 
-There are several ways of editing your application.
+## Services
 
-**Use Lovable**
+- **Web Development** - Modern, responsive websites with advanced features
+- **App Development** - Cross-platform mobile applications
+- **Branding & Design** - Complete brand identity packages
+- **Social Media Marketing** - Strategic social media campaigns
+- **SEO & Marketing** - Search engine optimization and digital marketing
+- **AI Solutions** - Custom AI chatbots and automation systems
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1a9f5a3c-15a6-4852-b4d8-a75fcce84d4b) and start prompting.
+## Development Setup
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+To run this project locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone <repository-url>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd elitjohnswebsite
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Technologies Used
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Vite** - Build tool and development server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI framework
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Modern UI components
+- **React Router** - Client-side routing
 
-**Use GitHub Codespaces**
+## Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Premium design with smooth animations
+- Pinterest-style portfolio gallery
+- Interactive pricing calculator
+- AI chatbot integration
+- Mobile-responsive design
+- SEO optimized
+- Progressive Web App (PWA) ready
 
-## What technologies are used for this project?
+## Contact
 
-This project is built with:
+**Email:** elitjohnsdigital@gmail.com
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+**Services Available:**
+- Custom website development
+- Mobile app development
+- Brand identity design
+- Social media management
+- AI chatbot setup
+- Digital marketing campaigns
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/1a9f5a3c-15a6-4852-b4d8-a75fcce84d4b) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© 2025 Elitjohns Digital Agency. All rights reserved.

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,6 +21,12 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (location.state?.message) {
+      setFormData(prev => ({ ...prev, message: location.state.message }));
+    }
+  }, [location.state]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,24 +52,24 @@ const Contact = () => {
       <Navigation />
 
       {/* Header */}
-      <section className="pt-32 pb-16 gradient-hero">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6">
+      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-12 sm:pb-16 bg-gradient-to-r from-primary via-green-600 to-emerald-600">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             Get in Touch
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto px-4">
             Ready to transform your digital presence? Let's start the conversation
           </p>
         </div>
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
-            <div className="bg-card p-8 rounded-lg shadow-card">
-              <h2 className="text-3xl font-heading font-bold text-secondary mb-6">
+            <div className="bg-gray-50 p-6 sm:p-8 rounded-lg shadow-lg">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Send us a Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -145,26 +153,26 @@ const Contact = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h2 className="text-3xl font-heading font-bold text-secondary mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
                   Contact Information
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8">
+                <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
                   Get in touch with us through any of these channels. We're here to help!
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold text-lg mb-1">Email</h3>
+                    <h3 className="font-semibold text-base sm:text-lg mb-1">Email</h3>
                     <a
                       href="mailto:elitjohnsdigital@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-gray-600 hover:text-primary transition-colors text-sm sm:text-base"
                     >
                       elitjohnsdigital@gmail.com
                     </a>
@@ -217,18 +225,18 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 gradient-section">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-heading font-bold text-secondary mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
-              <div className="bg-card p-6 rounded-lg shadow-card">
-                <h3 className="font-heading font-semibold text-lg mb-2">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
+                <h3 className="font-semibold text-base sm:text-lg mb-2">
                   How long does it take to complete a project?
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-gray-600 text-sm sm:text-base">
                   Timelines vary by project type. Landing pages typically take 1-2 weeks, while complex websites or apps may take 4-12 weeks. We'll provide a detailed timeline during our initial consultation.
                 </p>
               </div>
