@@ -157,7 +157,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="absolute -top-4 sm:-top-8 -right-4 sm:-right-8 bg-white p-2 sm:p-4 rounded-2xl shadow-2xl animate-bounce-in" style={{animationDelay: '1s'}}>
+              <div className="absolute -top-4 sm:-top-8 -right-4 sm:-right-8 bg-white p-2 sm:p-4 rounded-2xl shadow-2xl animate-bounce-in z-30" style={{animationDelay: '1s'}}>
                 <div className="flex items-center space-x-1 sm:space-x-2">
                   <div className="flex -space-x-1 sm:-space-x-2">
                     <img src={handsome1} alt="Client" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" loading="lazy" decoding="async" />
@@ -192,7 +192,7 @@ const Index = () => {
       </section>
 
       {/* Premium About Section */}
-      <section className="section-padding bg-gradient-to-br from-white via-gray-50 to-green-50/30 relative overflow-hidden max-w-full">
+      <section className="section-padding bg-gradient-to-br from-white via-gray-50 to-green-50/30 relative overflow-hidden max-w-full mt-8 sm:mt-0">
         {/* Background decoration */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-green-200/10 rounded-full blur-3xl animate-float"></div>

@@ -32,12 +32,12 @@ const About = () => {
       <Navigation />
 
       {/* Header */}
-      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-12 sm:pb-16 bg-gradient-to-r from-primary via-green-600 to-emerald-600">
+      <section className="pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-12 sm:pb-16 bg-gradient-to-r from-primary via-green-600 to-emerald-600 mt-8 sm:mt-0">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             About Elitjohns Digital
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto px-4 mt-8 sm:mt-6">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto px-4 mt-2 sm:mt-4">
             Empowering businesses through innovative digital solutions
           </p>
         </div>

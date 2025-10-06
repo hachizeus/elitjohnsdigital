@@ -54,14 +54,14 @@ const ChatWidget = () => {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-4 right-8 z-40 w-16 h-16 bg-gradient-to-r from-primary to-green-600 text-white rounded-full shadow-2xl hover:shadow-primary/25 transition-all duration-300 hover:scale-110 animate-glow ${isOpen ? 'hidden' : 'flex'} items-center justify-center`}
+        className={`fixed bottom-4 left-4 z-40 w-16 h-16 bg-gradient-to-r from-primary to-green-600 text-white rounded-full shadow-2xl hover:shadow-primary/25 transition-all duration-300 hover:scale-110 animate-glow ${isOpen ? 'hidden' : 'flex'} items-center justify-center`}
       >
         <MessageCircle className="w-7 h-7" />
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-4 right-8 z-50 w-80 h-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col animate-scale-in">
+        <div className="fixed bottom-4 left-4 z-50 w-80 h-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col animate-scale-in">
           {/* Header */}
           <div className="bg-gradient-to-r from-primary to-green-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
             <div className="flex items-center space-x-2">
