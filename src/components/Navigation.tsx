@@ -7,13 +7,24 @@ import logo from "@/assets/elitjohns-logo.png";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const location = useLocation();
   const topbarRef = useRef<HTMLDivElement | null>(null);
   const [topOffset, setTopOffset] = useState(0);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+      
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -73,6 +84,8 @@ const Navigation = () => {
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg' 
           : 'bg-white/90 backdrop-blur-sm'
+      } ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
         style={{ top: `${topOffset}px` }}
       >

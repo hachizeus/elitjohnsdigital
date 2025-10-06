@@ -37,7 +37,7 @@ const About = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             About Elitjohns Digital
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto px-4 mt-8 sm:mt-6">
             Empowering businesses through innovative digital solutions
           </p>
         </div>

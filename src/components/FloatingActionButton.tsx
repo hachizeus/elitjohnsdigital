@@ -30,10 +30,10 @@ const FloatingActionButton = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50">
+    <div className="fixed bottom-4 left-4 sm:bottom-8 sm:right-8 z-50">
       {/* Expanded Menu */}
       {isExpanded && (
-        <div className="absolute bottom-20 right-0 space-y-4 animate-fade-in-up">
+        <div className="absolute bottom-20 left-0 sm:right-0 space-y-4 animate-fade-in-up">
           <Link
             to="/contact"
             className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
