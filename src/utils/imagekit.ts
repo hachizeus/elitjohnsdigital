@@ -53,3 +53,8 @@ export const uploadToImageKit = async (file: File, folder = 'portfolio') => {
   
   return result;
 };
+
+export const generateSrcSet = (src: string) => {
+  const sizes = [320, 640, 1024];
+  return sizes.map(w => `${optimizeImage(src, w)} ${w}w`).join(', ');
+};
