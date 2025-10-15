@@ -1,5 +1,5 @@
-const IMAGEKIT_URL = import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT || 'https://ik.imagekit.io/elitjohns';
-const IMAGEKIT_PUBLIC_KEY = import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY || 'public_ubvHkKLQ1KZWDd+UcPhncElZqAU=';
+const IMAGEKIT_URL = 'https://ik.imagekit.io/elitjohns';
+const IMAGEKIT_PUBLIC_KEY = 'public_ubvHkKLQ1KZWDd+UcPhncElZqAU=';
 
 export const optimizeImage = (src: string, width: number, height?: number) => {
   if (!src.startsWith('http')) return src;
@@ -23,14 +23,24 @@ export const uploadToImageKit = async (file: File, folder = 'portfolio') => {
   const formData = new FormData();
   formData.append('file', file);
   formData.append('publicKey', IMAGEKIT_PUBLIC_KEY);
-  formData.append('fileName', file.name);
+  formData.append('fileName', `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`);
   formData.append('folder', folder);
   
-  const response = await fetch('https://upload.imagekit.io/api/v1/files/upload', {
-    method: 'POST',
-    body: formData
-  });
-  
-  if (!response.ok) throw new Error('Upload failed');
-  return response.json();
+  try {
+    const response = await fetch('https://upload.imagekit.io/api/v1/files/upload', {
+      method: 'POST',
+      body: formData
+    });
+    
+    const result = await response.json();
+    
+    if (!response.ok) {
+      throw new Error(result.message || `Upload failed: ${response.status}`);
+    }
+    
+    return result;
+  } catch (error) {
+    console.error('ImageKit upload error:', error);
+    throw error;
+  }
 };

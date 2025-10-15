@@ -150,13 +150,18 @@ const ProjectForm = ({ project, onSuccess, onCancel }: ProjectFormProps) => {
           
           // Upload to ImageKit
           const result = await uploadToImageKit(file, 'portfolio')
-          uploadedUrls.push(result.url)
           
-          setUploadProgress(prev => ({ ...prev, [file.name]: 100 }))
+          if (result && result.url) {
+            uploadedUrls.push(result.url)
+            setUploadProgress(prev => ({ ...prev, [file.name]: 100 }))
+          } else {
+            throw new Error('No URL returned from upload')
+          }
           
         } catch (err: any) {
           console.error('Upload error:', err)
-          alert(`Failed to upload ${file.name}: ${err.message}`)
+          setUploadProgress(prev => ({ ...prev, [file.name]: 0 }))
+          alert(`Failed to upload ${file.name}. Please check your ImageKit configuration.`)
         }
       } else {
         alert(`${file.name} is not a supported file type. Only images allowed.`)
