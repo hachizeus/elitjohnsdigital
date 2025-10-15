@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1000);
 
     // Register service worker
     if ('serviceWorker' in navigator) {
@@ -62,7 +62,7 @@ const App = () => {
 
             <CookieConsent />
             <PWAInstaller />
-            {isLoading && <LoadingScreen />}
+            {isLoading ? <LoadingScreen /> : null}
             <HashRouter>
               <ScrollToTop />
               <Analytics />

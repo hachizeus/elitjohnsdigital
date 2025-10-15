@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import OptimizedImage from "@/components/OptimizedImage";
 
 interface PortfolioCardProps {
   media: string;
@@ -35,12 +36,15 @@ const PortfolioCard = ({ media, mediaType, title, category, description, technol
             muted
             loop
             playsInline
+            preload="metadata"
           />
         ) : (
-          <img
+          <OptimizedImage
             src={media}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="transition-transform duration-500 group-hover:scale-110"
+            width={400}
+            height={300}
           />
         )}
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

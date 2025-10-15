@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Upload, X, Plus } from 'lucide-react'
+import { uploadToImageKit } from '@/utils/imagekit'
 
 interface ProjectFormProps {
   project?: Project | null
@@ -136,46 +137,29 @@ const ProjectForm = ({ project, onSuccess, onCancel }: ProjectFormProps) => {
     const uploadedUrls: string[] = []
 
     for (const file of Array.from(files)) {
-      if (file.type.startsWith('image/') || file.type.startsWith('video/')) {
-        // Check file size limit (100MB for videos, 50MB for images)
-        const maxSize = file.type.startsWith('video/') ? 100 * 1024 * 1024 : 50 * 1024 * 1024
+      if (file.type.startsWith('image/')) {
+        // Check file size limit (20MB for images)
+        const maxSize = 20 * 1024 * 1024
         if (file.size > maxSize) {
-          alert(`${file.name} is too large. Max size: ${file.type.startsWith('video/') ? '100MB' : '50MB'}`)
+          alert(`${file.name} is too large. Max size: 20MB`)
           continue
         }
         
-        // Sanitize filename
-        const sanitizedName = file.name
-          .replace(/[^a-zA-Z0-9.-]/g, '_')
-          .replace(/_{2,}/g, '_')
-        const fileName = `${Date.now()}_${sanitizedName}`
-        
         try {
-          // For large files, use chunked upload simulation
-          if (file.size > 5 * 1024 * 1024) { // > 5MB
-            await uploadWithProgress(fileName, file, file.name)
-          } else {
-            const { data, error } = await supabase.storage
-              .from('project-media')
-              .upload(fileName, file, {
-                cacheControl: '3600',
-                upsert: false
-              })
-
-            if (error) throw error
-          }
-
-          const { data: { publicUrl } } = supabase.storage
-            .from('project-media')
-            .getPublicUrl(fileName)
-          uploadedUrls.push(publicUrl)
+          setUploadProgress(prev => ({ ...prev, [file.name]: 0 }))
+          
+          // Upload to ImageKit
+          const result = await uploadToImageKit(file, 'portfolio')
+          uploadedUrls.push(result.url)
+          
+          setUploadProgress(prev => ({ ...prev, [file.name]: 100 }))
           
         } catch (err: any) {
           console.error('Upload error:', err)
           alert(`Failed to upload ${file.name}: ${err.message}`)
         }
       } else {
-        alert(`${file.name} is not a supported file type`)
+        alert(`${file.name} is not a supported file type. Only images allowed.`)
       }
     }
 
@@ -338,7 +322,7 @@ const ProjectForm = ({ project, onSuccess, onCancel }: ProjectFormProps) => {
             <input
               type="file"
               multiple
-              accept="image/*,video/*"
+              accept="image/*"
               onChange={(e) => e.target.files && handleFileUpload(e.target.files)}
               className="hidden"
               id="file-upload"
@@ -350,7 +334,7 @@ const ProjectForm = ({ project, onSuccess, onCancel }: ProjectFormProps) => {
                 {uploadingFiles ? 'Uploading...' : 'Click to upload images or videos'}
               </p>
               <p className="text-xs text-gray-500 mt-1">
-                Max: 100MB videos, 50MB images
+                Max: 20MB images (auto-optimized via ImageKit)
               </p>
               
               {/* Progress indicators */}

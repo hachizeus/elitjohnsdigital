@@ -1,3 +1,4 @@
+// Optimized portfolio data with local assets and CDN URLs
 import portfolioWeb1 from "@/assets/portfolio-web1.jpg";
 import portfolioWeb2 from "@/assets/portfolio-web2.jpg";
 import portfolioApp1 from "@/assets/portfolio-app1.jpg";
@@ -5,10 +6,13 @@ import portfolioBranding1 from "@/assets/portfolio-branding1.jpg";
 import portfolioSocial1 from "@/assets/portfolio-social1.jpg";
 import chatImage from "@/assets/chat.png";
 
+// Use Unsplash with specific image IDs for consistent, fast loading
+const UNSPLASH_BASE = "https://images.unsplash.com";
+
 export const portfolioItems = [
   {
     id: 1,
-    media: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    media: `${UNSPLASH_BASE}/photo-1460925895917-afdab827c52f?w=400&h=600&fit=crop&crop=entropy`,
     mediaType: "image",
     title: "Corporate Website Design",
     category: "Website Development",
@@ -18,7 +22,7 @@ export const portfolioItems = [
   },
   {
     id: 2,
-    media: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+    media: `${UNSPLASH_BASE}/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&crop=entropy`,
     mediaType: "image",
     title: "Interactive Website Demo",
     category: "Website Development",
@@ -28,7 +32,7 @@ export const portfolioItems = [
   },
   {
     id: 3,
-    media: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c",
+    media: `${UNSPLASH_BASE}/photo-1512941937669-90a1b58e7e9c?w=400&h=500&fit=crop&crop=entropy`,
     mediaType: "image",
     title: "Mobile Website Preview",
     category: "Website Development",
@@ -38,17 +42,17 @@ export const portfolioItems = [
   },
   {
     id: 4,
-    media: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    media: portfolioWeb1,
     mediaType: "image",
-    title: "Landing Page Design",
+    title: "E-commerce Platform",
     category: "Website Development",
-    description: "Modern horizontal landing page layout.",
-    technologies: ["HTML5", "CSS3", "JavaScript"],
+    description: "Full-featured e-commerce solution with payment integration.",
+    technologies: ["Next.js", "Stripe", "PostgreSQL"],
     link: "https://example.com"
   },
   {
     id: 5,
-    media: "https://images.unsplash.com/photo-1512428813834-c702c7702b78",
+    media: portfolioApp1,
     mediaType: "image",
     title: "Mobile App Development",
     category: "App Development",
@@ -58,7 +62,7 @@ export const portfolioItems = [
   },
   {
     id: 6,
-    media: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    media: `${UNSPLASH_BASE}/photo-1551650975-87deedd944c3?w=400&h=350&fit=crop&crop=entropy`,
     mediaType: "image",
     title: "Fitness Tracking App",
     category: "App Development",
@@ -68,7 +72,7 @@ export const portfolioItems = [
   },
   {
     id: 7,
-    media: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9",
+    media: portfolioBranding1,
     mediaType: "image",
     title: "Brand Identity Design",
     category: "Branding",
@@ -78,7 +82,7 @@ export const portfolioItems = [
   },
   {
     id: 8,
-    media: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
+    media: `${UNSPLASH_BASE}/photo-1558655146-364adaf1fcc9?w=400&h=400&fit=crop&crop=entropy`,
     mediaType: "image",
     title: "Logo Design Collection",
     category: "Branding",
@@ -88,7 +92,7 @@ export const portfolioItems = [
   },
   {
     id: 9,
-    media: "https://images.unsplash.com/photo-1611926653458-09294b3142bf",
+    media: portfolioSocial1,
     mediaType: "image",
     title: "Social Media Campaign",
     category: "Social Media",
@@ -98,7 +102,7 @@ export const portfolioItems = [
   },
   {
     id: 10,
-    media: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07",
+    media: `${UNSPLASH_BASE}/photo-1611224923853-80b023f02d71?w=400&h=500&fit=crop&crop=entropy`,
     mediaType: "image",
     title: "Content Strategy",
     category: "Social Media",
@@ -124,17 +128,6 @@ export const portfolioItems = [
     category: "AI Solutions",
     description: "AI-powered business process automation to streamline operations and reduce costs.",
     technologies: ["Python", "TensorFlow", "API Integration"],
-    link: "https://example.com"
-  },
-,
-  {
-    id: 20,
-    media: chatImage,
-    mediaType: "image",
-    title: "AI Dashboard",
-    category: "AI Solutions",
-    description: "Analytics dashboard with AI insights.",
-    technologies: ["Python", "D3.js", "React"],
     link: "https://example.com"
   }
 ];
